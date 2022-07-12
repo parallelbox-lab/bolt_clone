@@ -58,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   checkStateDragged() {
-    if (percent > 0.5) {
+    if (percent > 0.4) {
       setState(() {
         isDragged = true;
       });
@@ -243,7 +243,7 @@ class _MainScreenState extends State<MainScreen> {
                 },
                 child: DraggableScrollableSheet(
                   maxChildSize: 0.9,
-                  minChildSize: 0.3,
+                  minChildSize: 0.4,
                   builder: (BuildContext context, ScrollController scrollController) {
                     return Material(
                       elevation: 10.0,
@@ -253,8 +253,8 @@ class _MainScreenState extends State<MainScreen> {
                       color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.only(
-                          left: 10.0,
-                          right: 10.0,
+                          left: 25.0,
+                          right: 25.0,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -320,6 +320,9 @@ class _MainScreenState extends State<MainScreen> {
                                           color: Colors.purple[300],
                                         ),
                                       ),
+                                      onTap: (){
+                                        
+                                      },
                                     ),
                                   )
                                 : Container(),
@@ -360,7 +363,28 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
+ /* search destination */
+            Positioned(
+              left: 0.0,
+              right: 0.0,
+              top: -180 * (1 - percent),
+              child: Opacity(
+                opacity: percent,
+                // child: const SearchDestination(),
+              ),
+            ),
 
+            /* select destination on map */
+            Positioned(
+              left: 0.0,
+              right: 0.0,
+              bottom: -50 * (1 - percent),
+              child: Opacity(
+                opacity: percent,
+                // child: const PickOnMap(),
+              ),
+            ),
+        
 
         ]),
       ),
