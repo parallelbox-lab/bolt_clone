@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   checkStateDragged() {
-    if (percent > 0.4) {
+    if (percent > 0.5) {
       setState(() {
         isDragged = true;
       });
@@ -85,6 +85,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+      checkStateDragged();
     return SafeArea(
       child: Scaffold(
         key: scaffoldkey,
@@ -301,7 +302,6 @@ class _MainScreenState extends State<MainScreen> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
                               !isDragged
                                   ? Row(
                                     children: [
@@ -343,7 +343,7 @@ class _MainScreenState extends State<MainScreen> {
                                 child: ListView.builder(
                                   controller: scrollController,
                                   padding: const EdgeInsets.only(bottom: 40.0),
-                                  itemCount: 20,
+                                  itemCount: 5,
                                   itemBuilder: (context, index) {
                                     return const ListTile(
                                       contentPadding: EdgeInsets.zero,
