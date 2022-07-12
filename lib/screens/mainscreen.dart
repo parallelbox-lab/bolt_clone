@@ -146,14 +146,13 @@ class _MainScreenState extends State<MainScreen> {
         ),
         body: Stack(children: [
           GoogleMap(
-            padding: EdgeInsets.only(top:50,bottom: bottomPaddingOfMap),
+            padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
             myLocationEnabled: true,
             zoomGesturesEnabled: true,
-            myLocationButtonEnabled: true,
-            zoomControlsEnabled: true,
+            myLocationButtonEnabled: false,          
+            zoomControlsEnabled: false,
             initialCameraPosition: _initialCameraPosition,
             indoorViewEnabled: true,
-            
             onMapCreated: (controller) {
               _googleMapController = controller;
               setState(() {
@@ -162,6 +161,29 @@ class _MainScreenState extends State<MainScreen> {
               });
             },
           ),
+           Positioned(
+            right: 5,
+            bottom: Platform.isAndroid ? 240 : 270,
+            // alignment: Alignment.topRight,
+            child:Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(40),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 5,
+                            spreadRadius: 0.5,
+                            offset: Offset(.7, 0.7))
+                      ]),
+                  child: const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 20,
+                    child: Icon(Icons.my_location, size: 28, color: Colors.black87),
+                  ),
+                ),
+              ),
           Positioned(
               top: 35,
               left: 18,
@@ -189,7 +211,8 @@ class _MainScreenState extends State<MainScreen> {
                     child: Icon(Icons.menu, size: 28, color: Colors.black87),
                   ),
                 ),
-              ))
+              )),
+             
         ]),
       ),
     );
