@@ -327,7 +327,7 @@ class _MainScreenState extends State<MainScreen> {
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
                                     return const ListTile(
-                                      contentPadding: EdgeInsets.zero,
+                                      contentPadding: EdgeInsets.only(left: 25,right:25),
                                       leading: Icon(
                                         Icons.location_on,
                                         color: Colors.black,
