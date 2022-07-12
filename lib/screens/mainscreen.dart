@@ -163,6 +163,12 @@ StreamSubscription<Position>? _positionStream;
                 offset:Offset(.7,0.7)
               )
             ]
+            
+          ),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 20,
+            child: Icon(Icons.menu),
           ),),
         ))
         ]
