@@ -162,7 +162,7 @@ class _MainScreenState extends State<MainScreen> {
             },
           ),
            Positioned(
-            right: 5,
+            right: 10,
             bottom: Platform.isAndroid ? 240 : 270,
             // alignment: Alignment.topRight,
             child:Container(
