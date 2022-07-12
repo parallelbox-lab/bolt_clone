@@ -333,9 +333,10 @@ class _MainScreenState extends State<MainScreen> {
                                       ),
                                       const SizedBox(width:10),
                                     Container(
-                                    decoration:const BoxDecoration(
+                                    decoration: BoxDecoration(
                                     borderRadius:const BorderRadius.all(Radius.circular(20)) ,
-                                     color:Colors.grey
+                                     color:Colors.grey,
+                                     border: Border.all(color: Colors.grey,width:2)
                                       ),
                                       child: Image.asset("assets/bolt_food.png",width: 80,),
                                     )  
