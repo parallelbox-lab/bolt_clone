@@ -340,7 +340,7 @@ class _MainScreenState extends State<MainScreen> {
                                         ),
                                       ),
                                       subtitle: Text(
-                                        "New York City",
+                                        "Lagos",
                                         style: TextStyle(
                                           color: Colors.black54,
                                         ),
