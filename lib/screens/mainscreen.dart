@@ -310,7 +310,8 @@ class _MainScreenState extends State<MainScreen> {
                                             decoration: InputDecoration(
                                               hintText: "Search Destination",
                                               hintStyle:const TextStyle(
-                                                color:Colors.black
+                                                color:Colors.black,
+                                                fontWeight: FontWeight.bold
                                               ),
                                               filled: true,
                                               fillColor: Colors.grey[100],
