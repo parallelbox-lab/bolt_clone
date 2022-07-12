@@ -184,7 +184,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: const CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 20,
-                    child: Icon(Icons.menu, size: 32, color: Colors.black87),
+                    child: Icon(Icons.menu, size: 28, color: Colors.black87),
                   ),
                 ),
               ))
