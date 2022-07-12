@@ -323,7 +323,7 @@ class _MainScreenState extends State<MainScreen> {
                                    separatorBuilder: (context, index) =>
                                 const Divider(),
                                   controller: scrollController,
-                                  padding: const EdgeInsets.only(bottom: 40.0),
+                                  // padding: const EdgeInsets.only(bottom: 40.0),
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
                                     return const ListTile(
