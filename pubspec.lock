@@ -37,7 +37,7 @@ packages:
     source: hosted
     version: "1.1.0"
   cloud_firestore:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
@@ -100,7 +100,7 @@ packages:
     source: hosted
     version: "6.1.2"
   firebase_auth:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_auth
       url: "https://pub.dartlang.org"
@@ -121,7 +121,7 @@ packages:
     source: hosted
     version: "3.3.19"
   firebase_core:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
@@ -161,7 +161,7 @@ packages:
     source: hosted
     version: "2.0.6"
   flutter_svg:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
@@ -177,8 +177,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  geocoding:
+    dependency: "direct main"
+    description:
+      name: geocoding
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.4"
+  geocoding_platform_interface:
+    dependency: transitive
+    description:
+      name: geocoding_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   geolocator:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: geolocator
       url: "https://pub.dartlang.org"
@@ -220,14 +234,14 @@ packages:
     source: hosted
     version: "0.1.1"
   google_fonts:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_fonts
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.3.3"
   google_maps_flutter:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_maps_flutter
       url: "https://pub.dartlang.org"
@@ -374,7 +388,7 @@ packages:
     source: hosted
     version: "2.0.7"
   permission_handler:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: permission_handler
       url: "https://pub.dartlang.org"
@@ -437,14 +451,14 @@ packages:
     source: hosted
     version: "4.2.4"
   provider:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
   shared_preferences:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: shared_preferences
       url: "https://pub.dartlang.org"
@@ -500,7 +514,7 @@ packages:
     source: hosted
     version: "2.1.1"
   sizer:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: sizer
       url: "https://pub.dartlang.org"
