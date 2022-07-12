@@ -146,12 +146,14 @@ class _MainScreenState extends State<MainScreen> {
         ),
         body: Stack(children: [
           GoogleMap(
-            padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
+            padding: EdgeInsets.only(top:50,bottom: bottomPaddingOfMap),
             myLocationEnabled: true,
-            zoomGesturesEnabled: false,
+            zoomGesturesEnabled: true,
             myLocationButtonEnabled: true,
-            zoomControlsEnabled: false,
+            zoomControlsEnabled: true,
             initialCameraPosition: _initialCameraPosition,
+            indoorViewEnabled: true,
+            
             onMapCreated: (controller) {
               _googleMapController = controller;
               setState(() {
