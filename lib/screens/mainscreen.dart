@@ -148,6 +148,20 @@ StreamSubscription<Position>? _positionStream;
             });
           },
         ),
+        Positioned(child: GestureDetector(
+          child: Container(decoration: BoxDecoration(
+            color:Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 5,
+                spreadRadius: 0.5,
+                offset:Offset(.7,0.7)
+              )
+            ]
+          ),),
+        ))
         ]
       ),
     );
