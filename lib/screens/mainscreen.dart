@@ -303,30 +303,40 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                               const SizedBox(height: 10),
                               !isDragged
-                                  ? TextField(
-                                      decoration: InputDecoration(
-                                        enabled: false,
-                                        hintText: "Search Destination",
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: const OutlineInputBorder(
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(15.0),
+                                  ? Row(
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                            decoration: InputDecoration(
+                                              enabled: false,
+                                              hintText: "Search Destination",
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              border: const OutlineInputBorder(
+                                                borderRadius: BorderRadius.all(
+                                                  Radius.circular(15.0),
+                                                ),
+                                                // gapPadding: 2.0,
+                                              ),
+                                              prefixIcon: Icon(
+                                                Icons.search,
+                                                color: Colors.purple[300],
+                                              ),
+                                            ),
+                                            onTap: () {
+                                            print("hey");
+                                              setState(() {
+                                                percent = 1.0;
+                                              });
+                                            },
                                           ),
-                                          // gapPadding: 2.0,
-                                        ),
-                                        prefixIcon: Icon(
-                                          Icons.search,
-                                          color: Colors.purple[300],
-                                        ),
                                       ),
-                                      onTap: () {
-                                      print("hey");
-                                        setState(() {
-                                          percent = 1.0;
-                                        });
-                                      },
-                                    )
+                                    ClipRRect(
+                                    borderRadius:const BorderRadius.all(Radius.circular(20)) ,
+                                      child: Image.asset("assets/bolt_clone.png"),
+                                    )  
+                                    ],
+                                  )
                                   : Container(),
                               Expanded(
                                 child: ListView.builder(
