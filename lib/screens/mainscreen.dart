@@ -245,7 +245,7 @@ class _MainScreenState extends State<MainScreen> {
               },
               child: DraggableScrollableSheet(
                 maxChildSize: 0.9,
-                minChildSize: 0.4,
+                minChildSize: 0.5,
                 builder:
                     (BuildContext context, ScrollController scrollController) {
                   return Material(
@@ -274,33 +274,8 @@ class _MainScreenState extends State<MainScreen> {
                                   borderRadius: BorderRadius.circular(50.0),
                                 ),
                               ),
-                              const SizedBox(height: 15.0),
-                              Container(
-                                margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                                child: const Text(
-                                  "Akwaaba !",
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.symmetric(
-                                  horizontal: 5.0,
-                                  vertical: 5.0,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                ),
-                                child: const Text(
-                                  "Where are you going?",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 22.0,
-                                  ),
-                                ),
-                              ),
+                              // const SizedBox(height: 15.0),
+                             
                               !isDragged
                                   ? Row(
                                     children: [
@@ -308,7 +283,7 @@ class _MainScreenState extends State<MainScreen> {
                                         child: TextField(
                                           enabled: false,
                                             decoration: InputDecoration(
-                                              hintText: "Search Destination",
+                                              hintText: "Where to?",
                                               hintStyle:const TextStyle(
                                                 color:Colors.black,
                                                 fontWeight: FontWeight.bold
