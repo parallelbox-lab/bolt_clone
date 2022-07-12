@@ -249,13 +249,13 @@ class _MainScreenState extends State<MainScreen> {
                     return Material(
                       elevation: 10.0,
                       borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(20.0),
+                        top: Radius.circular(25.0),
                       ),
                       color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.only(
-                          left: 25.0,
-                          right: 25.0,
+                          left: 15.0,
+                          right: 15.0,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -297,8 +297,9 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                               ),
                             ),
+                            const SizedBox(height:10),
                             !isDragged
-                                ?TextFormField(
+                                ? TextField(
                                       decoration: InputDecoration(
                                         enabled: false,
                                         hintText: "Search Destination",
@@ -308,7 +309,7 @@ class _MainScreenState extends State<MainScreen> {
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(15.0),
                                           ),
-                                          gapPadding: 2.0,
+                                          // gapPadding: 2.0,
                                         ),
                                         prefixIcon: Icon(
                                           Icons.search,
