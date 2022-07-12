@@ -85,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-      checkStateDragged();
+    checkStateDragged();
     return SafeArea(
       child: Scaffold(
         key: scaffoldkey,
@@ -245,7 +245,7 @@ class _MainScreenState extends State<MainScreen> {
               },
               child: DraggableScrollableSheet(
                 maxChildSize: 0.9,
-                minChildSize: 0.5,
+                minChildSize: 0.4,
                 builder:
                     (BuildContext context, ScrollController scrollController) {
                   return Material(
@@ -307,8 +307,8 @@ class _MainScreenState extends State<MainScreen> {
                                     children: [
                                       Expanded(
                                         child: TextField(
+                                          enabled: false,
                                             decoration: InputDecoration(
-                                              enabled: false,
                                               hintText: "Search Destination",
                                               filled: true,
                                               fillColor: Colors.white,
@@ -340,6 +340,7 @@ class _MainScreenState extends State<MainScreen> {
                                   )
                                   : Container(),
                               Expanded(
+                                flex: 2,
                                 child: ListView.builder(
                                   controller: scrollController,
                                   padding: const EdgeInsets.only(bottom: 40.0),
