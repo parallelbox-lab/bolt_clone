@@ -32,7 +32,7 @@ class _SplashState extends State<Splash> {
       body: Container(
             decoration: const BoxDecoration(color: primaryColor),
             alignment: Alignment.center,
-            child: Image.asset("assets/logo.png",width:30)),
+            child: Image.asset("assets/logo.png",width:210)),
     );
   }
 }
