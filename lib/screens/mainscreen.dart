@@ -285,6 +285,7 @@ class _MainScreenState extends State<MainScreen> {
                                             print("hey");
                                               setState(() {
                                                 percent = 1.0;
+
                                               });
                                             },
                                           child: TextField(
@@ -329,25 +330,29 @@ class _MainScreenState extends State<MainScreen> {
                                   // padding: const EdgeInsets.only(bottom: 40.0),
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
-                                    return const ListTile(
-                                      contentPadding: EdgeInsets.only(left: 25,right:25),
-                                      leading: Icon(
-                                        Icons.location_on,
-                                        color: Colors.black,
-                                      ),
-                                      title: Text(
-                                        "Street No 12345 NY Street",
-                                        style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.w700,
+                                    return Column(
+                                      children: [
+                                        const ListTile(
+                                          contentPadding: EdgeInsets.only(left: 25,right:25),
+                                          leading: Icon(
+                                            Icons.location_on,
+                                            color: Colors.black,
+                                          ),
+                                          title: Text(
+                                            "Street No 12345 NY Street",
+                                            style: TextStyle(
+                                              color: Colors.black87,
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          ),
+                                          subtitle: Text(
+                                            "Lagos",
+                                            style: TextStyle(
+                                              color: Colors.black54,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                      subtitle: Text(
-                                        "Lagos",
-                                        style: TextStyle(
-                                          color: Colors.black54,
-                                        ),
-                                      ),
+                                      ],
                                     );
                                   },
                                 ),
