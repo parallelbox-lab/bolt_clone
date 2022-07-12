@@ -171,14 +171,14 @@ class _MainScreenState extends State<MainScreen> {
             onMapCreated: (controller) {
               _googleMapController = controller;
               setState(() {
-                bottomPaddingOfMap = Platform.isAndroid ? 315 : 320;
+                bottomPaddingOfMap = Platform.isAndroid ? 325 : 330;
                 locatePosition();
               });
             },
           ),
           Positioned(
             right: 10,
-            bottom: Platform.isAndroid ? 315 : 320,
+            bottom: Platform.isAndroid ? 325 : 330,
             // alignment: Alignment.topRight,
             child: GestureDetector(
               onTap: () {
