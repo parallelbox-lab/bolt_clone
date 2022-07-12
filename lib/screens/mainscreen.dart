@@ -47,6 +47,10 @@ StreamSubscription<Position>? _positionStream;
       }
     });
   }
+  @override
+  void initState(){
+    super.initState();
+  }
    @override
   void dispose() {
     //
@@ -149,12 +153,15 @@ StreamSubscription<Position>? _positionStream;
           },
         ),
         Positioned(
-          top: 44,
-          left:20,
+          top: 53,
+          left:24,
           child: GestureDetector(
-          child: Container(decoration: BoxDecoration(
+          child: Container(
+            padding:const EdgeInsets.all(8),
+            decoration: BoxDecoration(
             color:Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(40),
+            
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
@@ -168,7 +175,9 @@ StreamSubscription<Position>? _positionStream;
           child:const CircleAvatar(
             backgroundColor: Colors.white,
             radius: 20,
-            child: Icon(Icons.menu,size: 35,),
+            child: Icon(Icons.menu,size: 32,
+            color:Colors.black87
+            ),     
           ),),
         ))
         ]
