@@ -70,123 +70,126 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Column(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            decoration: const BoxDecoration(color: Colors.white),
-            accountName: Text('Owoeye Precious',
-                style: TextStyle(
-                    fontFamily: 'Core Pro',
-                    fontSize: 14.0.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black)),
-            accountEmail: Text('Edit Profile',
-                style: TextStyle(
-                    fontFamily: 'Core Pro',
-                    fontSize: 11.0.sp,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black)),
-            currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Image.asset('assets/images/icons/CircleProfile.png',
-                    width: 40, height: 40)),
-          ),
-          Expanded(
-            child: ListView(
-              shrinkWrap: true,
-              children: <Widget>[
-                const ListTile(
-                  title: Text('Payment'),
-                ),
-                const ListTile(
-                  title: Text('Ride History'),
-                ),
-
-                const ListTile(
-                  title: Text('Work trips'),
-                ),
-                const ListTile(
-                  title: Text('Support'),
-                ),
-                const ListTile(
-                  title: Text('About'),
-                ),
-
-                // ListTile(
-                //     title: const Text('My Sponsorships', style: NavBar._textStyle),
-                //     horizontalTitleGap: 2.0,
-                //     leading: Image.asset(
-                //         'assets/images/icons/bx_bxs-donate-heart.png',
-                //         color: Colors.grey,
-                //         width: 25,
-                //         height: 25),
-                //     onTap: () {
-                //       Navigator.pushNamed(context, MySponsorShip.routeName);
-                //     }),
-
-                // ListTile(
-                //     title: const Text('Notifications', style: _textStyle),
-                //     horizontalTitleGap: 2.0,
-                //     leading: Image.asset(
-                //         'assets/images/icons/notification.png',
-                //         width: 25,
-                //         height: 25),
-                //     onTap: () {
-                //       Navigator.pushNamed(context, Notifications.routeName);
-                //     }),
-
-                const Divider(height: 50),
-              ],
-            ),
-          ),
-        ],
-      ),
-      body: Stack(children: [
-        GoogleMap(
-          padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
-          myLocationEnabled: true,
-          zoomGesturesEnabled: false,
-          myLocationButtonEnabled: true,
-          zoomControlsEnabled: false,
-          initialCameraPosition: _initialCameraPosition,
-          onMapCreated: (controller) {
-            _googleMapController = controller;
-            setState(() {
-              bottomPaddingOfMap = Platform.isAndroid ? 240 : 270;
-              locatePosition();
-            });
-          },
-        ),
-        Positioned(
-            top: 53,
-            left: 20,
-            child: GestureDetector(
-              onTap: () {
-                if (drawerCanOpen) {
-                  scaffoldkey.currentState!.openDrawer();
-                }
-              },
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 5,
-                          spreadRadius: 0.5,
-                          offset: Offset(.7, 0.7))
-                    ]),
-                child: const CircleAvatar(
+    return SafeArea(
+      child: Scaffold(
+        key: scaffoldkey,
+        drawer: Column(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: const BoxDecoration(color: Colors.white),
+              accountName: Text('Owoeye Precious',
+                  style: TextStyle(
+                      fontFamily: 'Core Pro',
+                      fontSize: 14.0.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black)),
+              accountEmail: Text('Edit Profile',
+                  style: TextStyle(
+                      fontFamily: 'Core Pro',
+                      fontSize: 11.0.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.white,
-                  radius: 20,
-                  child: Icon(Icons.menu, size: 32, color: Colors.black87),
-                ),
+                  child: Image.asset('assets/images/icons/CircleProfile.png',
+                      width: 40, height: 40)),
+            ),
+            Expanded(
+              child: ListView(
+                shrinkWrap: true,
+                children: <Widget>[
+                  const ListTile(
+                    title: Text('Payment'),
+                  ),
+                  const ListTile(
+                    title: Text('Ride History'),
+                  ),
+    
+                  const ListTile(
+                    title: Text('Work trips'),
+                  ),
+                  const ListTile(
+                    title: Text('Support'),
+                  ),
+                  const ListTile(
+                    title: Text('About'),
+                  ),
+    
+                  // ListTile(
+                  //     title: const Text('My Sponsorships', style: NavBar._textStyle),
+                  //     horizontalTitleGap: 2.0,
+                  //     leading: Image.asset(
+                  //         'assets/images/icons/bx_bxs-donate-heart.png',
+                  //         color: Colors.grey,
+                  //         width: 25,
+                  //         height: 25),
+                  //     onTap: () {
+                  //       Navigator.pushNamed(context, MySponsorShip.routeName);
+                  //     }),
+    
+                  // ListTile(
+                  //     title: const Text('Notifications', style: _textStyle),
+                  //     horizontalTitleGap: 2.0,
+                  //     leading: Image.asset(
+                  //         'assets/images/icons/notification.png',
+                  //         width: 25,
+                  //         height: 25),
+                  //     onTap: () {
+                  //       Navigator.pushNamed(context, Notifications.routeName);
+                  //     }),
+    
+                  const Divider(height: 50),
+                ],
               ),
-            ))
-      ]),
+            ),
+          ],
+        ),
+        body: Stack(children: [
+          GoogleMap(
+            padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
+            myLocationEnabled: true,
+            zoomGesturesEnabled: false,
+            myLocationButtonEnabled: true,
+            zoomControlsEnabled: false,
+            initialCameraPosition: _initialCameraPosition,
+            onMapCreated: (controller) {
+              _googleMapController = controller;
+              setState(() {
+                bottomPaddingOfMap = Platform.isAndroid ? 240 : 270;
+                locatePosition();
+              });
+            },
+          ),
+          Positioned(
+              top: 40,
+              left: 20,
+              child: GestureDetector(
+                onTap: () {
+                  if (drawerCanOpen) {
+                    scaffoldkey.currentState!.openDrawer();
+                  }
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(40),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 5,
+                            spreadRadius: 0.5,
+                            offset: Offset(.7, 0.7))
+                      ]),
+                  child: const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 20,
+                    child: Icon(Icons.menu, size: 32, color: Colors.black87),
+                  ),
+                ),
+              ))
+        ]),
+      ),
     );
   }
 }
