@@ -260,11 +260,10 @@ class _MainScreenState extends State<MainScreen> {
                           left: 15.0,
                           right: 15.0,
                         ),
-                        child: ListView(
+                        child: Column(
                             // shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            // mainAxisAlignment: MainAxisAlignment.center,
-                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const SizedBox(height: 15.0),
                               Container(
