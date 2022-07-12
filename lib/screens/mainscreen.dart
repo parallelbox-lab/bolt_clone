@@ -165,24 +165,29 @@ class _MainScreenState extends State<MainScreen> {
             right: 10,
             bottom: Platform.isAndroid ? 240 : 270,
             // alignment: Alignment.topRight,
-            child:Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(40),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 5,
-                            spreadRadius: 0.5,
-                            offset: Offset(.7, 0.7))
-                      ]),
-                  child: const CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 20,
-                    child: Icon(Icons.my_location, size: 28, color: Colors.black87),
+            child:GestureDetector(
+              onTap: (){
+                locatePosition();
+              },
+              child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(40),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 5,
+                              spreadRadius: 0.5,
+                              offset: Offset(.7, 0.7))
+                        ]),
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 20,
+                      child: Icon(Icons.my_location, size: 28, color: Colors.black87),
+                    ),
                   ),
-                ),
+            ),
               ),
           Positioned(
               top: 35,
