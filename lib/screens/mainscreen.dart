@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:async';
+import 'package:bolt_clone/screens/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -297,13 +298,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             !isDragged
-                                ? GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        percent = 1.0;
-                                      });
-                                    },
-                                    child: TextFormField(
+                                ?TextFormField(
                                       decoration: InputDecoration(
                                         enabled: false,
                                         hintText: "Search Destination",
@@ -321,10 +316,11 @@ class _MainScreenState extends State<MainScreen> {
                                         ),
                                       ),
                                       onTap: (){
-                                        
+                                      setState(() {
+                                        percent = 1.0;
+                                      });
                                       },
-                                    ),
-                                  )
+                                    )                              
                                 : Container(),
                             Expanded(
                               child: ListView.builder(
@@ -370,7 +366,7 @@ class _MainScreenState extends State<MainScreen> {
               top: -180 * (1 - percent),
               child: Opacity(
                 opacity: percent,
-                // child: const SearchDestination(),
+                child: const SearchDestination(),
               ),
             ),
 
