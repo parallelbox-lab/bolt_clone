@@ -280,35 +280,38 @@ class _MainScreenState extends State<MainScreen> {
                                   ? Row(
                                     children: [
                                       Expanded(
-                                        child: TextField(
-                                          enabled: false,
-                                            decoration: InputDecoration(
-                                              hintText: "Where to?",
-                                              hintStyle:const TextStyle(
-                                                color:Colors.black,
-                                                fontWeight: FontWeight.bold
-                                              ),
-                                              filled: true,
-                                              fillColor: Colors.grey[100],
-                                              border: const OutlineInputBorder(
-                                                borderSide: BorderSide.none,
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(15.0),
-                                                ),
-                                                // gapPadding: 2.0,
-                                              ),
-                                              prefixIcon:const Icon(
-                                                Icons.search,
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                            onTap: () {
+                                        child: GestureDetector(
+                                          onTap: () {
                                             print("hey");
                                               setState(() {
                                                 percent = 1.0;
                                               });
                                             },
-                                          ),
+                                          child: TextField(
+                                            enabled: false,
+                                              decoration: InputDecoration(
+                                                hintText: "Where to?",
+                                                hintStyle:const TextStyle(
+                                                  color:Colors.black,
+                                                  fontWeight: FontWeight.bold
+                                                ),
+                                                filled: true,
+                                                fillColor: Colors.grey[100],
+                                                border: const OutlineInputBorder(
+                                                  borderSide: BorderSide.none,
+                                                  borderRadius: BorderRadius.all(
+                                                    Radius.circular(15.0),
+                                                  ),
+                                                  // gapPadding: 2.0,
+                                                ),
+                                                prefixIcon:const Icon(
+                                                  Icons.search,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                              
+                                            ),
+                                        ),
                                       ),
                                       const SizedBox(width:10),
                                     ClipRRect(
