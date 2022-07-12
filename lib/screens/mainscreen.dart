@@ -319,7 +319,9 @@ class _MainScreenState extends State<MainScreen> {
                                   )
                                   : Container(),
                               Expanded(
-                                child: ListView.builder(
+                                child: ListView.separated(
+                                   separatorBuilder: (context, index) =>
+                                const Divider(),
                                   controller: scrollController,
                                   padding: const EdgeInsets.only(bottom: 40.0),
                                   itemCount: 5,
