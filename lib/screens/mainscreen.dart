@@ -255,8 +255,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     color: Colors.white,
                     
-                    child: Expanded(
-                      child: Padding(
+                    child: Padding(
                         padding: const EdgeInsets.only(
                           left: 15.0,
                           right: 15.0,
@@ -310,9 +309,13 @@ class _MainScreenState extends State<MainScreen> {
                                           enabled: false,
                                             decoration: InputDecoration(
                                               hintText: "Search Destination",
+                                              hintStyle:const TextStyle(
+                                                color:Colors.black
+                                              ),
                                               filled: true,
-                                              fillColor: Colors.white,
+                                              fillColor: Colors.grey[100],
                                               border: const OutlineInputBorder(
+                                                borderSide: BorderSide.none,
                                                 borderRadius: BorderRadius.all(
                                                   Radius.circular(15.0),
                                                 ),
@@ -340,7 +343,6 @@ class _MainScreenState extends State<MainScreen> {
                                   )
                                   : Container(),
                               Expanded(
-                                flex: 2,
                                 child: ListView.builder(
                                   controller: scrollController,
                                   padding: const EdgeInsets.only(bottom: 40.0),
@@ -372,7 +374,7 @@ class _MainScreenState extends State<MainScreen> {
                             ],
                           ),
                         ),
-                    ),
+                    
                     
                   );
                 },
