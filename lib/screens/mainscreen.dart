@@ -148,7 +148,10 @@ StreamSubscription<Position>? _positionStream;
             });
           },
         ),
-        Positioned(child: GestureDetector(
+        Positioned(
+          top: 44,
+          left:20,
+          child: GestureDetector(
           child: Container(decoration: BoxDecoration(
             color:Colors.white,
             borderRadius: BorderRadius.circular(20),
