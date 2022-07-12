@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                   const ListTile(
                     title: Text('Ride History'),
                   ),
-    
+
                   const ListTile(
                     title: Text('Work trips'),
                   ),
@@ -114,7 +114,7 @@ class _MainScreenState extends State<MainScreen> {
                   const ListTile(
                     title: Text('About'),
                   ),
-    
+
                   // ListTile(
                   //     title: const Text('My Sponsorships', style: NavBar._textStyle),
                   //     horizontalTitleGap: 2.0,
@@ -126,7 +126,7 @@ class _MainScreenState extends State<MainScreen> {
                   //     onTap: () {
                   //       Navigator.pushNamed(context, MySponsorShip.routeName);
                   //     }),
-    
+
                   // ListTile(
                   //     title: const Text('Notifications', style: _textStyle),
                   //     horizontalTitleGap: 2.0,
@@ -137,7 +137,7 @@ class _MainScreenState extends State<MainScreen> {
                   //     onTap: () {
                   //       Navigator.pushNamed(context, Notifications.routeName);
                   //     }),
-    
+
                   const Divider(height: 50),
                 ],
               ),
@@ -149,10 +149,9 @@ class _MainScreenState extends State<MainScreen> {
             padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
             myLocationEnabled: true,
             zoomGesturesEnabled: true,
-            myLocationButtonEnabled: false,          
+            myLocationButtonEnabled: false,
             zoomControlsEnabled: false,
             initialCameraPosition: _initialCameraPosition,
-            indoorViewEnabled: true,
             onMapCreated: (controller) {
               _googleMapController = controller;
               setState(() {
@@ -161,34 +160,36 @@ class _MainScreenState extends State<MainScreen> {
               });
             },
           ),
-           Positioned(
+          Positioned(
             right: 10,
             bottom: Platform.isAndroid ? 240 : 270,
             // alignment: Alignment.topRight,
-            child:GestureDetector(
-              onTap: (){
-                locatePosition();
+            child: GestureDetector(
+              onTap: () {
+                print('hello');
+                locatePosition();               
               },
               child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(40),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.black26,
-                              blurRadius: 5,
-                              spreadRadius: 0.5,
-                              offset: Offset(.7, 0.7))
-                        ]),
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 20,
-                      child: Icon(Icons.my_location, size: 28, color: Colors.black87),
-                    ),
-                  ),
-            ),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 5,
+                          spreadRadius: 0.5,
+                          offset: Offset(.7, 0.7))
+                    ]),
+                child: const CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 17,
+                  child:
+                      Icon(Icons.my_location, size: 25, color: Colors.black87),
+                ),
               ),
+            ),
+          ),
           Positioned(
               top: 35,
               left: 18,
@@ -217,7 +218,6 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               )),
-             
         ]),
       ),
     );
