@@ -165,10 +165,10 @@ StreamSubscription<Position>? _positionStream;
             ]
             
           ),
-          child: CircleAvatar(
+          child:const CircleAvatar(
             backgroundColor: Colors.white,
             radius: 20,
-            child: Icon(Icons.menu),
+            child: Icon(Icons.menu,size: 35,),
           ),),
         ))
         ]
