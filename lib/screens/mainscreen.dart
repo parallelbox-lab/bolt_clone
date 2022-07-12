@@ -324,7 +324,7 @@ class _MainScreenState extends State<MainScreen> {
                                               ),
                                               prefixIcon: Icon(
                                                 Icons.search,
-                                                color: Colors.purple[300],
+                                                color: Colors.grey,
                                               ),
                                             ),
                                             onTap: () {
