@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   checkStateDragged() {
-    if (percent > 0.5) {
+    if (percent > 0.6) {
       setState(() {
         isDragged = true;
       });
@@ -322,7 +322,7 @@ class _MainScreenState extends State<MainScreen> {
                                                 ),
                                                 // gapPadding: 2.0,
                                               ),
-                                              prefixIcon: Icon(
+                                              prefixIcon:const Icon(
                                                 Icons.search,
                                                 color: Colors.grey,
                                               ),
