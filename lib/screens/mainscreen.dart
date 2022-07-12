@@ -260,8 +260,8 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       child: Expanded(
                         child: ListView(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          // shrinkWrap: true,
+                          // physics: NeverScrollableScrollPhysics(),
                           // mainAxisAlignment: MainAxisAlignment.center,
                           // crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
