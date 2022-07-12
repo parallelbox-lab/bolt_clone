@@ -46,6 +46,13 @@ StreamSubscription<Position>? _positionStream;
       }
     });
   }
+   @override
+  void dispose() {
+    //
+    super.dispose();
+    _googleMapController!.dispose();
+    _positionStream!.cancel();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
