@@ -16,6 +16,9 @@ class _MainScreenState extends State<MainScreen> {
   Position? currentPosition;
   double bottomPaddingOfMap = 0;
   bool drawerCanOpen = true;
+  double percent = 0.0;
+  bool isDragged = false;
+  double initialHeight = 0.0;
   StreamSubscription<Position>? _positionStream;
   GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
   static const _initialCameraPosition = CameraPosition(
@@ -30,11 +33,10 @@ class _MainScreenState extends State<MainScreen> {
     accuracy: LocationAccuracy.high,
     distanceFilter: 100,
   );
+
 //  get user location
   void locatePosition() async {
     // Test if location services are enabled.
-    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
-
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
@@ -53,6 +55,18 @@ class _MainScreenState extends State<MainScreen> {
             .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
       }
     });
+  }
+
+  checkStateDragged() {
+    if (percent > 0.5) {
+      setState(() {
+        isDragged = true;
+      });
+    } else {
+      setState(() {
+        isDragged = false;
+      });
+    }
   }
 
   @override
@@ -167,7 +181,7 @@ class _MainScreenState extends State<MainScreen> {
             child: GestureDetector(
               onTap: () {
                 print('hello');
-                locatePosition();               
+                locatePosition();
               },
               child: Container(
                 padding: const EdgeInsets.all(8),
