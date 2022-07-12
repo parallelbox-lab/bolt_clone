@@ -161,8 +161,8 @@ class _MainScreenState extends State<MainScreen> {
             },
           ),
           Positioned(
-              top: 40,
-              left: 20,
+              top: 35,
+              left: 18,
               child: GestureDetector(
                 onTap: () {
                   if (drawerCanOpen) {
