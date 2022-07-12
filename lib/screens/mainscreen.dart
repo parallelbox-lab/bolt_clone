@@ -253,114 +253,116 @@ class _MainScreenState extends State<MainScreen> {
                       top: Radius.circular(25.0),
                     ),
                     color: Colors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 15.0,
-                        right: 15.0,
-                      ),
-                      child: Expanded(
-                        child: ListView(
-                          // shrinkWrap: true,
-                          // physics: NeverScrollableScrollPhysics(),
-                          // mainAxisAlignment: MainAxisAlignment.center,
-                          // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 15.0),
-                            Container(
-                              height: 7.0,
-                              margin: const EdgeInsets.symmetric(horizontal: 150.0),
-                              decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
-                            ),
-                            const SizedBox(height: 15.0),
-                            Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                              child: const Text(
-                                "Akwaaba !",
-                                style: TextStyle(
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: 5.0,
-                                vertical: 5.0,
-                              ),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              child: const Text(
-                                "Where are you going?",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 22.0,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            !isDragged
-                                ? TextField(
-                                    decoration: InputDecoration(
-                                      enabled: false,
-                                      hintText: "Search Destination",
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      border: const OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0),
-                                        ),
-                                        // gapPadding: 2.0,
-                                      ),
-                                      prefixIcon: Icon(
-                                        Icons.search,
-                                        color: Colors.purple[300],
-                                      ),
-                                    ),
-                                    onTap: () {
-                                    print("hey");
-                                      setState(() {
-                                        percent = 1.0;
-                                      });
-                                    },
-                                  )
-                                : Container(),
-                            Expanded(
-                              child: ListView.builder(
-                                controller: scrollController,
-                                padding: const EdgeInsets.only(bottom: 40.0),
-                                itemCount: 20,
-                                itemBuilder: (context, index) {
-                                  return const ListTile(
-                                    contentPadding: EdgeInsets.zero,
-                                    leading: Icon(
-                                      Icons.location_on,
-                                      color: Colors.black,
-                                    ),
-                                    title: Text(
-                                      "Street No 12345 NY Street",
-                                      style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                    subtitle: Text(
-                                      "New York City",
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
+                    
+                    child: Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 15.0,
+                          right: 15.0,
                         ),
-                      ),
+                        child: ListView(
+                            // shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            // mainAxisAlignment: MainAxisAlignment.center,
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 15.0),
+                              Container(
+                                height: 7.0,
+                                margin: const EdgeInsets.symmetric(horizontal: 150.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(50.0),
+                                ),
+                              ),
+                              const SizedBox(height: 15.0),
+                              Container(
+                                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: const Text(
+                                  "Akwaaba !",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: 5.0,
+                                  vertical: 5.0,
+                                ),
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                ),
+                                child: const Text(
+                                  "Where are you going?",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 22.0,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              !isDragged
+                                  ? TextField(
+                                      decoration: InputDecoration(
+                                        enabled: false,
+                                        hintText: "Search Destination",
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        border: const OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(15.0),
+                                          ),
+                                          // gapPadding: 2.0,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Icons.search,
+                                          color: Colors.purple[300],
+                                        ),
+                                      ),
+                                      onTap: () {
+                                      print("hey");
+                                        setState(() {
+                                          percent = 1.0;
+                                        });
+                                      },
+                                    )
+                                  : Container(),
+                              Expanded(
+                                child: ListView.builder(
+                                  controller: scrollController,
+                                  padding: const EdgeInsets.only(bottom: 40.0),
+                                  itemCount: 20,
+                                  itemBuilder: (context, index) {
+                                    return const ListTile(
+                                      contentPadding: EdgeInsets.zero,
+                                      leading: Icon(
+                                        Icons.location_on,
+                                        color: Colors.black,
+                                      ),
+                                      title: Text(
+                                        "Street No 12345 NY Street",
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        "New York City",
+                                        style: TextStyle(
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                     ),
+                    
                   );
                 },
               ),
