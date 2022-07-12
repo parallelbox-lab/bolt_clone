@@ -170,14 +170,14 @@ class _MainScreenState extends State<MainScreen> {
             onMapCreated: (controller) {
               _googleMapController = controller;
               setState(() {
-                bottomPaddingOfMap = Platform.isAndroid ? 330 : 340;
+                bottomPaddingOfMap = Platform.isAndroid ? 405 : 420;
                 locatePosition();
               });
             },
           ),
           Positioned(
             right: 10,
-            bottom: Platform.isAndroid ? 330 : 340,
+            bottom: Platform.isAndroid ? 405 : 420,
             // alignment: Alignment.topRight,
             child: GestureDetector(
               onTap: () {
@@ -233,156 +233,158 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               )),
-                /* draggable scrollable sheet*/
-            Positioned.fill(
-              child: NotificationListener<DraggableScrollableNotification>(
-                onNotification: (notification) {
-                  setState(() {
-                    percent = 2 * notification.extent - 0.8;
-                  });
-                  return true;
+          /* draggable scrollable sheet*/
+          Positioned.fill(
+            child: NotificationListener<DraggableScrollableNotification>(
+              onNotification: (notification) {
+                setState(() {
+                  percent = 2 * notification.extent - 0.8;
+                });
+                return true;
+              },
+              child: DraggableScrollableSheet(
+                maxChildSize: 0.9,
+                minChildSize: 0.5,
+                builder:
+                    (BuildContext context, ScrollController scrollController) {
+                  return Material(
+                    elevation: 10.0,
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(25.0),
+                    ),
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 15.0,
+                        right: 15.0,
+                      ),
+                      child: ListView(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 15.0),
+                          Container(
+                            height: 7.0,
+                            margin: const EdgeInsets.symmetric(horizontal: 150.0),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                          ),
+                          const SizedBox(height: 15.0),
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                            child: const Text(
+                              "Akwaaba !",
+                              style: TextStyle(
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 5.0,
+                              vertical: 5.0,
+                            ),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                            ),
+                            child: const Text(
+                              "Where are you going?",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 22.0,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          !isDragged
+                              ? TextField(
+                                  decoration: InputDecoration(
+                                    enabled: false,
+                                    hintText: "Search Destination",
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    border: const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(15.0),
+                                      ),
+                                      // gapPadding: 2.0,
+                                    ),
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color: Colors.purple[300],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                  print("hey");
+                                    setState(() {
+                                      percent = 1.0;
+                                    });
+                                  },
+                                )
+                              : Container(),
+                          Expanded(
+                            child: ListView.builder(
+                              controller: scrollController,
+                              padding: const EdgeInsets.only(bottom: 40.0),
+                              itemCount: 20,
+                              itemBuilder: (context, index) {
+                                return const ListTile(
+                                  contentPadding: EdgeInsets.zero,
+                                  leading: Icon(
+                                    Icons.location_on,
+                                    color: Colors.black,
+                                  ),
+                                  title: Text(
+                                    "Street No 12345 NY Street",
+                                    style: TextStyle(
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "New York City",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
                 },
-                child: DraggableScrollableSheet(
-                  maxChildSize: 0.9,
-                  minChildSize: 0.4,
-                  builder: (BuildContext context, ScrollController scrollController) {
-                    return Material(
-                      elevation: 10.0,
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(25.0),
-                      ),
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          left: 15.0,
-                          right: 15.0,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 15.0),
-                            Container(
-                              height: 10.0,
-                              margin: const EdgeInsets.symmetric(horizontal: 120.0),
-                              decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
-                            ),
-                            const SizedBox(height: 15.0),
-                            Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                              child: const Text(
-                                "Akwaaba !",
-                                style: TextStyle(
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: 5.0,
-                                vertical: 5.0,
-                              ),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              child: const Text(
-                                "Where are you going?",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 22.0,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height:10),
-                            !isDragged
-                                ? TextField(
-                                      decoration: InputDecoration(
-                                        enabled: false,
-                                        hintText: "Search Destination",
-                                        filled: true,
-                                        fillColor: Colors.white,
-                                        border: const OutlineInputBorder(
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(15.0),
-                                          ),
-                                          // gapPadding: 2.0,
-                                        ),
-                                        prefixIcon: Icon(
-                                          Icons.search,
-                                          color: Colors.purple[300],
-                                        ),
-                                      ),
-                                      onTap: (){
-                                      setState(() {
-                                        percent = 1.0;
-                                      });
-                                      },
-                                    )                              
-                                : Container(),
-                            Expanded(
-                              child: ListView.builder(
-                                controller: scrollController,
-                                padding: const EdgeInsets.only(bottom: 40.0),
-                                itemCount: 20,
-                                itemBuilder: (context, index) {
-                                  return const ListTile(
-                                    contentPadding: EdgeInsets.zero,
-                                    leading: Icon(
-                                      Icons.location_on,
-                                      color: Colors.black,
-                                    ),
-                                    title: Text(
-                                      "Street No 12345 NY Street",
-                                      style: TextStyle(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                    subtitle: Text(
-                                      "New York City",
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
               ),
             ),
- /* search destination */
-            Positioned(
-              left: 0.0,
-              right: 0.0,
-              top: -180 * (1 - percent),
-              child: Opacity(
-                opacity: percent,
-                child: const SearchDestination(),
-              ),
+          ),
+          /* search destination */
+          Positioned(
+            left: 0.0,
+            right: 0.0,
+            top: -180 * (1 - percent),
+            child: Opacity(
+              opacity: percent,
+              child: const SearchDestination(),
             ),
+          ),
 
-            /* select destination on map */
-            Positioned(
-              left: 0.0,
-              right: 0.0,
-              bottom: -50 * (1 - percent),
-              child: Opacity(
-                opacity: percent,
-                // child: const PickOnMap(),
-              ),
+          /* select destination on map */
+          Positioned(
+            left: 0.0,
+            right: 0.0,
+            bottom: -50 * (1 - percent),
+            child: Opacity(
+              opacity: percent,
+              // child: const PickOnMap(),
             ),
-        
-
+          ),
         ]),
       ),
     );
