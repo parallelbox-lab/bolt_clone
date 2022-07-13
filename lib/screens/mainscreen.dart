@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   checkStateDragged() {
-    if (percent > 0.6) {
+    if (percent > 0.5) {
       setState(() {
         isDragged = true;
       });
@@ -332,7 +332,7 @@ class _MainScreenState extends State<MainScreen> {
                                   itemCount: 5,
                                   itemBuilder: (context, index) {
                                     return Column(
-                                      children: [
+                                      children:const [
                                         const ListTile(
                                           contentPadding: EdgeInsets.only(left: 25,right:25),
                                           leading: Icon(
@@ -360,8 +360,7 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ],
                           ),
-                        ),
-                    
+                        ),               
                     
                   );
                 },
