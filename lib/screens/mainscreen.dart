@@ -102,25 +102,31 @@ class _MainScreenState extends State<MainScreen> {
                     child: ListView(
                       shrinkWrap: true,
                       children: <Widget>[
-                        Row(children: [
-                        CircleAvatar(
-                      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-                      child:Icon(Icons.account_box)),
-                      Column(children: [
-              Text('Owoeye Precious',
-                      style: TextStyle(
-                          fontFamily: 'Core Pro',
-                          fontSize: 14.0.sp,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black)),
-                   Text('Edit Profile',
-                      style: TextStyle(
-                          fontFamily: 'Core Pro',
-                          fontSize: 11.0.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
-                      ],)
-                        ],),
+                        DrawerHeader(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                         const CircleAvatar(
+                            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                            child:Icon(Icons.account_box)),
+                            Column(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                              Text('Owoeye Precious',
+                                      style: TextStyle(
+                            fontFamily: 'Core Pro',
+                            fontSize: 14.0.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black)),
+                                           Text('Edit Profile',
+                                              style: TextStyle(
+                            fontFamily: 'Core Pro',
+                            fontSize: 11.0.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black)),
+                                              ],)
+                          ],),
+                        ),
                         const ListTile(
                           title: Text('Payment'),
                         ),
