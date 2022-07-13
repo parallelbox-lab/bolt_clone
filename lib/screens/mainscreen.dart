@@ -117,51 +117,54 @@ class _MainScreenState extends State<MainScreen> {
                           width: 40, height: 40)),
                 ),
                 Expanded(
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: <Widget>[
-                      const ListTile(
-                        title: Text('Payment'),
-                      ),
-                      const ListTile(
-                        title: Text('Ride History'),
-                      ),
+                  child: Container(
+                    margin:const EdgeInsets.only(left:20),
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: <Widget>[
+                        const ListTile(
+                          title: Text('Payment'),
+                        ),
+                        const ListTile(
+                          title: Text('Ride History'),
+                        ),
           
-                      const ListTile(
-                        title: Text('Work trips'),
-                      ),
-                      const ListTile(
-                        title: Text('Support'),
-                      ),
-                      const ListTile(
-                        title: Text('About'),
-                      ),
+                        const ListTile(
+                          title: Text('Work trips'),
+                        ),
+                        const ListTile(
+                          title: Text('Support'),
+                        ),
+                        const ListTile(
+                          title: Text('About'),
+                        ),
           
-                      // ListTile(
-                      //     title: const Text('My Sponsorships', style: NavBar._textStyle),
-                      //     horizontalTitleGap: 2.0,
-                      //     leading: Image.asset(
-                      //         'assets/images/icons/bx_bxs-donate-heart.png',
-                      //         color: Colors.grey,
-                      //         width: 25,
-                      //         height: 25),
-                      //     onTap: () {
-                      //       Navigator.pushNamed(context, MySponsorShip.routeName);
-                      //     }),
+                        // ListTile(
+                        //     title: const Text('My Sponsorships', style: NavBar._textStyle),
+                        //     horizontalTitleGap: 2.0,
+                        //     leading: Image.asset(
+                        //         'assets/images/icons/bx_bxs-donate-heart.png',
+                        //         color: Colors.grey,
+                        //         width: 25,
+                        //         height: 25),
+                        //     onTap: () {
+                        //       Navigator.pushNamed(context, MySponsorShip.routeName);
+                        //     }),
           
-                      // ListTile(
-                      //     title: const Text('Notifications', style: _textStyle),
-                      //     horizontalTitleGap: 2.0,
-                      //     leading: Image.asset(
-                      //         'assets/images/icons/notification.png',
-                      //         width: 25,
-                      //         height: 25),
-                      //     onTap: () {
-                      //       Navigator.pushNamed(context, Notifications.routeName);
-                      //     }),
+                        // ListTile(
+                        //     title: const Text('Notifications', style: _textStyle),
+                        //     horizontalTitleGap: 2.0,
+                        //     leading: Image.asset(
+                        //         'assets/images/icons/notification.png',
+                        //         width: 25,
+                        //         height: 25),
+                        //     onTap: () {
+                        //       Navigator.pushNamed(context, Notifications.routeName);
+                        //     }),
           
-                      const Divider(height: 50),
-                    ],
+                        const Divider(height: 50),
+                      ],
+                    ),
                   ),
                 ),
               ],
