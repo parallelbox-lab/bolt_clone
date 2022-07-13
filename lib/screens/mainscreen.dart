@@ -130,7 +130,7 @@ class _MainScreenState extends State<MainScreen> {
                                                 ],)
                             ],),
                           
-                    
+                      const SizedBox(height:25),
                         const ListTile(
                           title: Text('Payment'),
                         ),
