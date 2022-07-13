@@ -111,10 +111,9 @@ class _MainScreenState extends State<MainScreen> {
                           fontSize: 11.0.sp,
                           fontWeight: FontWeight.w400,
                           color: Colors.black)),
-                  currentAccountPicture: CircleAvatar(
-                      backgroundColor:const Color.fromRGBO(255, 255, 255, 1),
-                      child: Image.asset('assets/images/icons/CircleProfile.png',
-                          width: 40, height: 40)),
+                  currentAccountPicture:const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                      child:Icon(Icons.account_box)),
                 ),
                 Expanded(
                   child: Container(
