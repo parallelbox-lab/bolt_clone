@@ -100,8 +100,8 @@ class _MainScreenState extends State<MainScreen> {
                   child: Container(
                     margin:const EdgeInsets.only(left:20),
                     child: DrawerHeader(
-                          padding: EdgeInsets.zero,
-                          child: ListView(
+                        child: ListView(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         children: <Widget>[
                            Row(
