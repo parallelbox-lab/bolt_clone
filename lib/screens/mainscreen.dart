@@ -105,7 +105,7 @@ class _MainScreenState extends State<MainScreen> {
                         shrinkWrap: true,
                         children: <Widget>[
                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                            const CircleAvatar(
