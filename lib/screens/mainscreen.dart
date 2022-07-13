@@ -105,7 +105,7 @@ class _MainScreenState extends State<MainScreen> {
                         shrinkWrap: true,
                         children: <Widget>[
                            Container(
-                            padding:EdgeInsets.all(15),
+                            padding:const EdgeInsets.only(top:15,bottom:15),
                              child: Row(
                                 // crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
