@@ -97,7 +97,7 @@ class _MainScreenState extends State<MainScreen> {
             child: Column(
               children: <Widget>[
                 UserAccountsDrawerHeader(
-                  margin:const EdgeInsets.only(left:20),
+                  margin:const EdgeInsets.only(left:20,top:0),
                   decoration: const BoxDecoration(color: Colors.white),
                   accountName: Text('Owoeye Precious',
                       style: TextStyle(
@@ -111,9 +111,7 @@ class _MainScreenState extends State<MainScreen> {
                           fontSize: 11.0.sp,
                           fontWeight: FontWeight.w400,
                           color: Colors.black)),
-                  currentAccountPicture:const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-                      child:Icon(Icons.account_box)),
+                
                 ),
                 Expanded(
                   child: Container(
