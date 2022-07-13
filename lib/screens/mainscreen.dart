@@ -99,37 +99,38 @@ class _MainScreenState extends State<MainScreen> {
                 Expanded(
                   child: Container(
                     margin:const EdgeInsets.only(left:20),
-                    child: ListView(
-                      shrinkWrap: true,
-                      children: <Widget>[
-                        DrawerHeader(
+                    child: DrawerHeader(
                           padding: EdgeInsets.zero,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                         const CircleAvatar(
-                            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-                            child:Icon(Icons.account_box)),
-                            Column(
-                             mainAxisAlignment: MainAxisAlignment.start,
-                             crossAxisAlignment:CrossAxisAlignment.start,
+                          child: ListView(
+                        shrinkWrap: true,
+                        children: <Widget>[
+                           Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                              Text('Owoeye Precious',
-                                      style: TextStyle(
-                            fontFamily: 'Core Pro',
-                            fontSize: 14.0.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black)),
-                                           Text('Edit Profile',
-                                              style: TextStyle(
-                            fontFamily: 'Core Pro',
-                            fontSize: 11.0.sp,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black)),
-                                              ],)
-                          ],),
-                        ),
+                           const CircleAvatar(
+                              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                              child:Icon(Icons.account_box)),
+                              Column(
+                               mainAxisAlignment: MainAxisAlignment.start,
+                               crossAxisAlignment:CrossAxisAlignment.start,
+                                children: [
+                                Text('Owoeye Precious',
+                                        style: TextStyle(
+                              fontFamily: 'Core Pro',
+                              fontSize: 14.0.sp,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black)),
+                                             Text('Edit Profile',
+                                                style: TextStyle(
+                              fontFamily: 'Core Pro',
+                              fontSize: 11.0.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black)),
+                                                ],)
+                            ],),
+                          
+                    
                         const ListTile(
                           title: Text('Payment'),
                         ),
@@ -174,7 +175,7 @@ class _MainScreenState extends State<MainScreen> {
                       ],
                     ),
                   ),
-                ),
+                ),)
               ],
             ),
           ),
