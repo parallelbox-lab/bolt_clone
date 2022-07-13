@@ -96,29 +96,20 @@ class _MainScreenState extends State<MainScreen> {
             backgroundColor: Colors.white,
             child: Column(
               children: <Widget>[
-                UserAccountsDrawerHeader(
-                  margin:const EdgeInsets.only(left:20,top:0),
-                  decoration: const BoxDecoration(color: Colors.white),
-                  accountName: Text('Owoeye Precious',
-                      style: TextStyle(
-                          fontFamily: 'Core Pro',
-                          fontSize: 14.0.sp,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black)),
-                  accountEmail: Text('Edit Profile',
-                      style: TextStyle(
-                          fontFamily: 'Core Pro',
-                          fontSize: 11.0.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black)),
-                
-                ),
                 Expanded(
                   child: Container(
                     margin:const EdgeInsets.only(left:20),
                     child: ListView(
                       shrinkWrap: true,
                       children: <Widget>[
+                        Row(children: [
+                        CircleAvatar(
+                      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                      child:Icon(Icons.account_box)),
+                      Column(children: [
+
+                      ],)
+                        ],)
                         const ListTile(
                           title: Text('Payment'),
                         ),
