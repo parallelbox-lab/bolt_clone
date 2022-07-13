@@ -285,8 +285,7 @@ class _MainScreenState extends State<MainScreen> {
                                           onTap: () {
                                             print("hey");
                                               setState(() {
-                                                percent = 1.0;
-
+                                                percent = 0.9;
                                               });
                                             },
                                           child: TextField(
