@@ -132,8 +132,8 @@ class _MainScreenState extends State<MainScreen> {
                                                   ],)
                               ],),
                            ),
-                      const Divider(),
                       const SizedBox(height:25),
+                      const Divider(),
                         const ListTile(
                           title: Text('Payment'),
                         ),
