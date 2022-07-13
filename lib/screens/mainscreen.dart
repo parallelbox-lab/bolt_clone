@@ -105,12 +105,14 @@ class _MainScreenState extends State<MainScreen> {
                         DrawerHeader(
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                          const CircleAvatar(
                             backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                             child:Icon(Icons.account_box)),
                             Column(
                              mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment:CrossAxisAlignment.start,
                               children: [
                               Text('Owoeye Precious',
                                       style: TextStyle(
