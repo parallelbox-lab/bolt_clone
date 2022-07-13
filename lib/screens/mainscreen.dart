@@ -103,6 +103,7 @@ class _MainScreenState extends State<MainScreen> {
                       shrinkWrap: true,
                       children: <Widget>[
                         DrawerHeader(
+                          padding: EdgeInsets.zero,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
