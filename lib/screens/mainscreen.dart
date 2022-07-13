@@ -90,13 +90,14 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
         key: scaffoldkey,
         drawer: SizedBox(
-          width: 250,
+          width: 350,
           child: Drawer(
             elevation: 16.0,
             backgroundColor: Colors.white,
             child: Column(
               children: <Widget>[
                 UserAccountsDrawerHeader(
+                  margin:const EdgeInsets.only(left:20),
                   decoration: const BoxDecoration(color: Colors.white),
                   accountName: Text('Owoeye Precious',
                       style: TextStyle(
